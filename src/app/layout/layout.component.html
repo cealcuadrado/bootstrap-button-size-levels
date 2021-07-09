@@ -1,1 +1,44 @@
-<p>layout works!</p>
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <div class="form-group">
+      <label>Nivel de tamaño para la columna 1</label>
+       <input type="range" class="form-control" [(ngModel)]="level" min="1" max="3" step="1"/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="form-group">
+      <label>Nivel de tamaño para la columna 2</label>
+      <input type="range" class="form-control" [(ngModel)]="size" min="1" max="3" step="1" />
+    </div>
+  </div>
+</div>
+<hr>
+<section class="test-sizes">
+  <div class="row">
+    <div class="col-12 col-lg-6" [ngClass]="setLevelSize()">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales hendrerit eros et interdum.</p>
+      <button class="btn btn-primary mr-2">
+        Primary
+      </button>
+      <button class="btn btn-secondary mr-2">
+        Secondary
+      </button>
+      <button class="btn btn-success">
+        Success
+      </button>
+    </div>
+    <div class="col-12 col-lg-6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales hendrerit eros et interdum. Aliquam erat
+        volutpat. Sed euismod posuere odio, id vulputate nulla porttitor in.</p>
+      <button class="btn btn-primary mr-2" [ngClass]="setSize()">
+        Primary
+      </button>
+      <button class="btn btn-secondary mr-2" [ngClass]="setSize()">
+        Secondary
+      </button>
+      <button class="btn btn-success" [ngClass]="setSize()">
+        Success
+      </button>
+    </div>
+  </div>
+</section>
